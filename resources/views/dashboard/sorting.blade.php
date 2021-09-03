@@ -32,7 +32,11 @@
                     </ol>
                 </nav>
             </div>
-            <div class="col-2 mb-2">
+            <div class="col-4 mb-2">
+                <a class="btn btn-warning btn-sm" 
+                    href="{{ url()->previous() }}">
+                    <span class="fa fa-caret-left"></span> Kembali
+                </a>
                 <a class="btn btn-primary btn-sm" 
                     href="{{ url('export_excel_ind?produk='.$produk.'&kecamatan='.$kecamatan.'&kelurahan='.$kelurahan) }}">
                     Export Excel

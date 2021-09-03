@@ -30,4 +30,5 @@
             class="form-control" value="{{ $industri->nama_perusahaan }}" />
     </div>
     <button type="button" id="simpanThp1" class="btn btn-rounded btn-primary btn-block mt-5">Simpan</button>
+    <button type="button" id="loading1" class="btn btn-rounded btn-secondary hide btn-block mt-5">Menyimpan data....</button>
 </form>

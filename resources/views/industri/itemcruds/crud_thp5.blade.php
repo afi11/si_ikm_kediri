@@ -24,4 +24,5 @@
         <input type="number" class="form-control" readonly value="{{ $naker->n_pr + $naker->n_lk + $naker->n_asing }}"  id="n_tenaker" />
     </div>
     <button type="button" id="simpanThp5" class="btn btn-rounded btn-primary btn-block mt-5">Simpan</button>
+    <button type="button" id="loading5" class="btn btn-rounded btn-secondary hide btn-block mt-5">Menyimpan data....</button>
 </form>

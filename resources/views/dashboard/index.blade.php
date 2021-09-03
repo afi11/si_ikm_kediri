@@ -1,6 +1,14 @@
 @extends('templates.main')
 @section('title', 'Halaman Dashboard | Data Industri | Disperindag Kota Kediri')
 @section('content')
+    @if(Session::has('err_access'))
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            {{ Session::get('err_access') }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+      </div>
+    @endif
     <p>Jumlah Data</p>
     <div class="row">
         @foreach ($kec as $item)            

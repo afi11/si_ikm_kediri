@@ -31,4 +31,5 @@
       <i>(Ketik tanpa titik / koma, tanda koma terisi otomatis setelah diketik)</i>
     </div>
     <button type="button" id="simpanThp3" class="btn btn-rounded btn-primary btn-block mt-5">Simpan</button>
+    <button type="button" id="loading3" class="btn btn-rounded btn-secondary hide btn-block mt-5">Menyimpan data....</button>
 </form>

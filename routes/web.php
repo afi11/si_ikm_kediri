@@ -15,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 Route::group(['middleware' => ['auth']], function(){
     Route::get('dashboard', 'DashboardController@index');
     Route::get('sorting/industri','DashboardController@sorting');
+    Route::get('industri/show/{id}','IndustriController@show');
+});
+
+Route::group(['middleware' => ['auth','AkunTipe:adm']], function(){
 
     // Eksport Excel
     Route::get('export_excel_ind', 'DashboardController@export_excel');
@@ -52,8 +56,7 @@ Route::group(['middleware' => ['auth']], function(){
     Route::get('industri/delete/{id}','IndustriController@destroy');
     Route::get('industri/recover/{id}','IndustriController@recover');
     Route::get('industri/permanent_delete/{id}','IndustriController@permanent_delete');
-    Route::get('industri/show/{id}','IndustriController@show');
-
+   
     // Recover Data
     Route::get('recover_data','RecoverDataController@index'); 
 

@@ -107,10 +107,6 @@
                 <td>{{ $jenisproduksi->kbli }}</td>
             </tr>
             <tr>
-                <th>Kode Cabang</th>
-                <td>{{ $jenisproduksi->kode_cabang }}</td>
-            </tr>
-            <tr>
                 <th>Nama Produk</th>
                 <td>{{ $jenisproduksi->nama_produk  }}</td>
             </tr>
@@ -153,20 +149,71 @@
             </tr>
             <tr>
                 <th colspan="2">
-                    <span class="text-primary">Bahan Bakar</span>
+                    <span class="text-primary">Bahan Bakar BBM</span>
                 </th>
             </tr>
             <tr>
                 <th>Jenis</th>
-                <td>{{ $bhn_bkr->jenis_bhn_bkr }}</td>
+                <td>{{ $bhn_bkr->jenis_bbm }}</td>
             </tr>
             <tr>
                 <th>Volume</th>
-                <td>{{ $bhn_bkr->volume_bhn_bkr }}</td>
+                <td>{{ $bhn_bkr->volume_bbm }}</td>
             </tr>
             <tr>
                 <th>Satuan</th>
-                <td>{{ $bhn_bkr->satuan_bhn_bkr  }}</td>
+                <td>{{ $bhn_bkr->satuan_bbm  }}</td>
+            </tr>
+            <tr>
+                <th colspan="2">
+                    <span class="text-primary">Bahan Bakar Listrik</span>
+                </th>
+            </tr>
+            <tr>
+                <th>Jenis</th>
+                <td>{{ $bhn_bkr->jenis_listrik }}</td>
+            </tr>
+            <tr>
+                <th>Volume</th>
+                <td>{{ $bhn_bkr->volume_listrik }}</td>
+            </tr>
+            <tr>
+                <th>Satuan</th>
+                <td>{{ $bhn_bkr->satuan_listrik  }}</td>
+            </tr>
+            <tr>
+                <th colspan="2">
+                    <span class="text-primary">Bahan Bakar Gas</span>
+                </th>
+            </tr>
+            <tr>
+                <th>Jenis</th>
+                <td>{{ $bhn_bkr->jenis_gas }}</td>
+            </tr>
+            <tr>
+                <th>Volume</th>
+                <td>{{ $bhn_bkr->volume_gas }}</td>
+            </tr>
+            <tr>
+                <th>Satuan</th>
+                <td>{{ $bhn_bkr->satuan_gas  }}</td>
+            </tr>
+            <tr>
+                <th colspan="2">
+                    <span class="text-primary">Bahan Bakar Air</span>
+                </th>
+            </tr>
+            <tr>
+                <th>Jenis</th>
+                <td>{{ $bhn_bkr->jenis_air }}</td>
+            </tr>
+            <tr>
+                <th>Volume</th>
+                <td>{{ $bhn_bkr->volume_air }}</td>
+            </tr>
+            <tr>
+                <th>Satuan</th>
+                <td>{{ $bhn_bkr->satuan_air  }}</td>
             </tr>
             <tr>
                 <th colspan="2">

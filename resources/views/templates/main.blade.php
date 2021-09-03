@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="{{ asset('assets/vendor/charts/c3charts/c3.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/vendor/fonts/flag-icon-css/flag-icon.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/vendor/datatables-bs4/css/dataTables.bootstrap4.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/vendor/sweatalert/sweatalert.min.css') }}" />
     <title>@yield('title')</title>
     <style>
         .hide {
@@ -80,18 +81,7 @@
     <script src="{{ asset('assets/vendor/momentjs/moment.min.js') }}"></script>
     <!-- main js -->
     <script src="{{ asset('assets/libs/js/main-js.js')}}"></script>
-    <!-- chart chartist js -->
-    <script src="{{ asset('assets/vendor/charts/chartist-bundle/chartist.min.js')}}"></script>
-    <!-- sparkline js -->
-    <script src="{{ asset('assets/vendor/charts/sparkline/jquery.sparkline.js')}}"></script>
-    <!-- morris js -->
-    <script src="{{ asset('assets/vendor/charts/morris-bundle/raphael.min.js')}}"></script>
-    <script src="{{ asset('assets/vendor/charts/morris-bundle/morris.js')}}"></script>
-    {{-- <!-- chart c3 js -->
-    <script src="{{ asset('assets/vendor/charts/c3charts/c3.min.js')}}"></script>
-    <script src="{{ asset('assets/vendor/charts/c3charts/d3-5.4.0.min.js')}}"></script>
-    <script src="{{ asset('assets/vendor/charts/c3charts/C3chartjs.js')}}"></script>
-    <script src="{{ asset('assets/libs/js/dashboard-ecommerce.js')}}"></script> --}}
+    <script src="{{ asset('assets/vendor/sweatalert/sweatalert.min.js') }}"></script>
 
     <script>
         var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
@@ -163,60 +153,80 @@
         $("#simpanThp1").click(function(){
             var dataFrom = $('#frmThp1').serialize();
             var url =  mainUrl+'/crudthp1_update';
+            document.querySelector("#simpanThp1").classList.add("hide");
+            document.querySelector("#loading1").classList.remove("hide");
             submitData(url,dataFrom,'update_thp1');
         });
 
         $("#simpanThp2").click(function(){
             var dataFrom = $('#frmThp2').serialize();
             var url =  mainUrl+'/crudthp2';
+            document.querySelector("#simpanThp2").classList.add("hide");
+            document.querySelector("#loading2").classList.remove("hide");
             submitData(url,dataFrom,'update_thp2');
         });
 
         $("#simpanThp3").click(function(){
             var dataFrom = $('#frmThp3').serialize();
             var url =  mainUrl+'/crudthp3';
+            document.querySelector("#simpanThp3").classList.add("hide");
+            document.querySelector("#loading3").classList.remove("hide");
             submitData(url,dataFrom,'update_thp3');
         });
 
         $("#simpanThp4").click(function(){
             var dataFrom = $('#frmThp4').serialize();
             var url =  mainUrl+'/crudthp4';
+            document.querySelector("#simpanThp4").classList.add("hide");
+            document.querySelector("#loading4").classList.remove("hide");
             submitData(url,dataFrom,'update_thp4');
         });
 
         $("#simpanThp5").click(function(){
             var dataFrom = $('#frmThp5').serialize();
             var url =  mainUrl+'/crudthp5';
+            document.querySelector("#simpanThp5").classList.add("hide");
+            document.querySelector("#loading5").classList.remove("hide");
             submitData(url,dataFrom,'update_thp5');
         });
 
         $("#simpanThp6").click(function(){
             var dataFrom = $('#frmThp6').serialize();
             var url =  mainUrl+'/crudthp6';
+            document.querySelector("#simpanThp6").classList.add("hide");
+            document.querySelector("#loading6").classList.remove("hide");
             submitData(url,dataFrom,'update_thp6');
         });
 
         $("#simpanThp7").click(function(){
             var dataFrom = $('#frmThp7').serialize();
             var url =  mainUrl+'/crudthp7';
+            document.querySelector("#simpanThp7").classList.add("hide");
+            document.querySelector("#loading7").classList.remove("hide");
             submitData(url,dataFrom,'update_thp7');
         });
 
         $("#simpanThp8").click(function(){
             var dataFrom = $('#frmThp8').serialize();
             var url =  mainUrl+'/crudthp7';
+            document.querySelector("#simpanThp8").classList.add("hide");
+            document.querySelector("#loading8").classList.remove("hide");
             submitData(url,dataFrom,'update_thp8');
         });
 
         $("#simpanThp9").click(function(){
             var dataFrom = $('#frmThp9').serialize();
             var url =  mainUrl+'/crudthp7';
+            document.querySelector("#simpanThp9").classList.add("hide");
+            document.querySelector("#loading9").classList.remove("hide");
             submitData(url,dataFrom,'update_thp9');
         });
 
         $("#simpanThp10").click(function(){
             var dataFrom = $('#frmThp10').serialize();
             var url =  mainUrl+'/crudthp7';
+            document.querySelector("#simpanThp10").classList.add("hide");
+            document.querySelector("#loading10").classList.remove("hide");
             submitData(url,dataFrom,'update_thp10');
         });
 
@@ -243,8 +253,6 @@
         }
 
         function postData(url, data, tipe){
-                var notif = document.querySelector("#notifikasi_edit_industri");
-                var text_notif = document.querySelector(".add_notifikasi_industri");
                 $.ajax({
                     url: url,
                     type: 'POST',
@@ -255,52 +263,104 @@
                             window.location.href = mainUrl+'/industri/edit/'+id_industri;
                         }
                         if(tipe == 'update_thp1'){
-                            notif.classList.remove("hide");
-                            text_notif.innerHTML = "Berhasil Menyimpan Perubahan Data Industri";
+                            document.querySelector("#simpanThp1").classList.remove("hide");
+                            document.querySelector("#loading1").classList.add("hide");
+                            Swal.fire(
+                                'Berhasil',
+                                'Data Identitas Umum Berhasil Diubah',
+                                'success'
+                            );
                         }
                         if(tipe == 'update_thp2'){
-                            notif.classList.remove("hide");
-                            text_notif.innerHTML = "Berhasil Menyimpan Perubahan Data Industri";
+                            document.querySelector("#simpanThp2").classList.remove("hide");
+                            document.querySelector("#loading2").classList.add("hide");
+                            Swal.fire(
+                                'Berhasil',
+                                'Data Identitas Industri Berhasil Diubah',
+                                'success'
+                            );
                         }
                         if(tipe == 'update_thp3'){
-                            notif.classList.remove("hide");
-                            text_notif.innerHTML = "Berhasil Menyimpan Perubahan Data Produksi";
+                            document.querySelector("#simpanThp3").classList.remove("hide");
+                            document.querySelector("#loading3").classList.add("hide");
+                            Swal.fire(
+                                'Berhasil',
+                                'Data Produksi Industri Berhasil Diubah',
+                                'success'
+                            );
                         }
                         if(tipe == 'update_thp4'){
-                            notif.classList.remove("hide");
-                            text_notif.innerHTML = "Berhasil Menyimpan Perubahan Data Bahan Baku";
+                            document.querySelector("#simpanThp4").classList.remove("hide");
+                            document.querySelector("#loading4").classList.add("hide");
+                            Swal.fire(
+                                'Berhasil',
+                                'Data Bahan Baku Industri Berhasil Diubah',
+                                'success'
+                            );
                         }
                         if(tipe == 'update_thp5'){
-                            notif.classList.remove("hide");
-                            text_notif.innerHTML = "Berhasil Menyimpan Perubahan Data Tenaga Kerja";
+                            document.querySelector("#simpanThp5").classList.remove("hide");
+                            document.querySelector("#loading5").classList.add("hide");
+                            Swal.fire(
+                                'Berhasil',
+                                'Data Tenaga Kerja Industri Berhasil Diubah',
+                                'success'
+                            );
                         }
                         if(tipe == 'update_thp6'){
-                            notif.classList.remove("hide");
-                            text_notif.innerHTML = "Berhasil Menyimpan Perubahan Data Pemasaran";
+                            document.querySelector("#simpanThp6").classList.remove("hide");
+                            document.querySelector("#loading6").classList.add("hide");
+                            Swal.fire(
+                                'Berhasil',
+                                'Data Pemasaran Industri Berhasil Diubah',
+                                'success'
+                            );
                             window.location.href = mainUrl + "/industri";
                         }
                         if(tipe == 'update_thp7'){
-                            notif.classList.remove("hide");
-                            text_notif.innerHTML = "Berhasil Menyimpan Perubahan Data Bahan Bakar BBM";
+                            document.querySelector("#simpanThp7").classList.remove("hide");
+                            document.querySelector("#loading7").classList.add("hide");
+                            Swal.fire(
+                                'Berhasil',
+                                'Data Bahan Bakar BBM Berhasil Diubah',
+                                'success'
+                            );
                         }
                         if(tipe == 'update_thp8'){
-                            notif.classList.remove("hide");
-                            text_notif.innerHTML = "Berhasil Menyimpan Perubahan Data Bahan Bakar Listrik";
+                            document.querySelector("#simpanThp8").classList.remove("hide");
+                            document.querySelector("#loading8").classList.add("hide");
+                            Swal.fire(
+                                'Berhasil',
+                                'Data Bahan Bakar Listrik Berhasil Diubah',
+                                'success'
+                            );
                         }
                         if(tipe == 'update_thp9'){
-                            notif.classList.remove("hide");
-                            text_notif.innerHTML = "Berhasil Menyimpan Perubahan Data Bahan Bakar Gas LPG";
+                            document.querySelector("#simpanThp9").classList.remove("hide");
+                            document.querySelector("#loading9").classList.add("hide");
+                            Swal.fire(
+                                'Berhasil',
+                                'Data Bahan Bakar Gas Berhasil Diubah',
+                                'success'
+                            );
                         }
                         if(tipe == 'update_thp10'){
-                            notif.classList.remove("hide");
-                            text_notif.innerHTML = "Berhasil Menyimpan Perubahan Data Bahan Bakar Air";
+                            document.querySelector("#simpanThp10").classList.remove("hide");
+                            document.querySelector("#loading10").classList.add("hide");
+                            Swal.fire(
+                                'Berhasil',
+                                'Data Bahan Bakar Air Berhasil Diubah',
+                                'success'
+                            );
                         }
                     },
                     error: function(err){
                         if(tipe == 'update_thp5'){
-                            alert("Periksa Apakah ada Form yang Kosong, Apabila Kosong Isikan dengan 0");
-                        }else{
-                            alert("Periksa Apakah ada Form yang Kosong, Apabila Kosong Isikan dengan Tanda -");
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Gagal Input Data',
+                                text: 'Periksa Apakah ada Form yang Kosong',
+                            });
                         }
                     }
                 });

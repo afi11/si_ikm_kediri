@@ -25,4 +25,5 @@
           value="{{ $pemasaran->ekspor }}" id="ekspor" />
     </div>
     <button type="button" id="simpanThp6" class="btn btn-rounded btn-primary btn-block mt-5">Simpan</button>
+    <button type="button" id="loading6" class="btn btn-rounded btn-secondary hide btn-block mt-5">Menyimpan data....</button>
 </form>

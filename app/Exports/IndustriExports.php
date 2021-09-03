@@ -32,13 +32,17 @@ class IndustriExports implements FromCollection, WithHeadings, ShouldAutoSize
                 ->join('kelurahans','kelurahans.id','=','industri.kel_id')
                 ->join('tenagakerja','tenagakerja.id_industri','=','industri.id_industri')
                 ->join('bahanbaku','bahanbaku.id_industri','=','industri.id_industri')
+                ->join('bahanbakar','bahanbakar.id_industri','=','industri.id_industri')
                 ->join('pemasaran','pemasaran.id_industri','=','industri.id_industri')
                 ->get([
                     'badanusaha.nama_badan_usaha','industri.nama_perusahaan','industri.pemilik','industri.jalan',
                     'kelurahans.nama_kel','kecamatan.nama_kec','industri.telp_fax','tenagakerja.n_pr','tenagakerja.n_lk','tenagakerja.n_asing',
-                    'jenisproduksi.kbli','jenisproduksi.kode_cabang','jenisproduksi.nama_produk','jenisproduksi.kapasitas_produksi',
+                    'jenisproduksi.kbli','jenisproduksi.nama_produk','jenisproduksi.kapasitas_produksi',
                     'jenisproduksi.satuan','jenisproduksi.nilai_produksi','bahanbaku.jenis','bahanbaku.volume','bahanbaku.jenis','bahanbaku.volume',
                     'bahanbaku.satuan_bhn_bk','bahanbaku.nilai_bb_bp','bahanbaku.asal_bb','pemasaran.lokal','pemasaran.regional','pemasaran.nasional','pemasaran.ekspor','industri.no_ijin','industri.tgl_ijin',
+                    'bahanbakar.jenis_bbm','bahanbakar.volume_bbm','satuan_bbm',
+                    'bahanbakar.jenis_listrik','bahanbakar.volume_listrik','bahanbakar.satuan_listrik','bahanbakar.jenis_gas','bahanbakar.volume_gas','bahanbakar.satuan_gas',
+                    'bahanbakar.jenis_air','bahanbakar.volume_air','bahanbakar.satuan_air',
                     'industri.status_pm','industri.klasifikasi'
                 ]);
         }
@@ -49,6 +53,7 @@ class IndustriExports implements FromCollection, WithHeadings, ShouldAutoSize
                 ->join('kelurahans','kelurahans.id','=','industri.kel_id')
                 ->join('tenagakerja','tenagakerja.id_industri','=','industri.id_industri')
                 ->join('bahanbaku','bahanbaku.id_industri','=','industri.id_industri')
+                ->join('bahanbakar','bahanbakar.id_industri','=','industri.id_industri')
                 ->join('pemasaran','pemasaran.id_industri','=','industri.id_industri')
                 ->where('jenisproduksi.nama_produk',$this->produk)
                 ->where('industri.kel_id',$this->kelurahan)
@@ -56,9 +61,12 @@ class IndustriExports implements FromCollection, WithHeadings, ShouldAutoSize
                 ->get([
                     'badanusaha.nama_badan_usaha','industri.nama_perusahaan','industri.pemilik','industri.jalan',
                     'kelurahans.nama_kel','kecamatan.nama_kec','industri.telp_fax','tenagakerja.n_pr','tenagakerja.n_lk','tenagakerja.n_asing',
-                    'jenisproduksi.kbli','jenisproduksi.kode_cabang','jenisproduksi.nama_produk','jenisproduksi.kapasitas_produksi',
+                    'jenisproduksi.kbli','jenisproduksi.nama_produk','jenisproduksi.kapasitas_produksi',
                     'jenisproduksi.satuan','jenisproduksi.nilai_produksi','bahanbaku.jenis','bahanbaku.volume','bahanbaku.jenis','bahanbaku.volume',
                     'bahanbaku.satuan_bhn_bk','bahanbaku.nilai_bb_bp','bahanbaku.asal_bb','pemasaran.lokal','pemasaran.regional','pemasaran.nasional','pemasaran.ekspor','industri.no_ijin','industri.tgl_ijin',
+                    'bahanbakar.jenis_bbm','bahanbakar.volume_bbm','satuan_bbm',
+                    'bahanbakar.jenis_listrik','bahanbakar.volume_listrik','bahanbakar.satuan_listrik','bahanbakar.jenis_gas','bahanbakar.volume_gas','bahanbakar.satuan_gas',
+                    'bahanbakar.jenis_air','bahanbakar.volume_air','bahanbakar.satuan_air',
                     'industri.status_pm','industri.klasifikasi'
                 ]);
         }
@@ -69,14 +77,18 @@ class IndustriExports implements FromCollection, WithHeadings, ShouldAutoSize
                 ->join('kelurahans','kelurahans.id','=','industri.kel_id')
                 ->join('tenagakerja','tenagakerja.id_industri','=','industri.id_industri')
                 ->join('bahanbaku','bahanbaku.id_industri','=','industri.id_industri')
+                ->join('bahanbakar','bahanbakar.id_industri','=','industri.id_industri')
                 ->join('pemasaran','pemasaran.id_industri','=','industri.id_industri')
                 ->where('jenisproduksi.nama_produk',$this->produk)
                 ->get([
                     'badanusaha.nama_badan_usaha','industri.nama_perusahaan','industri.pemilik','industri.jalan',
                     'kelurahans.nama_kel','kecamatan.nama_kec','industri.telp_fax','tenagakerja.n_pr','tenagakerja.n_lk','tenagakerja.n_asing',
-                    'jenisproduksi.kbli','jenisproduksi.kode_cabang','jenisproduksi.nama_produk','jenisproduksi.kapasitas_produksi',
+                    'jenisproduksi.kbli','jenisproduksi.nama_produk','jenisproduksi.kapasitas_produksi',
                     'jenisproduksi.satuan','jenisproduksi.nilai_produksi','bahanbaku.jenis','bahanbaku.volume','bahanbaku.jenis','bahanbaku.volume',
                     'bahanbaku.satuan_bhn_bk','bahanbaku.nilai_bb_bp','bahanbaku.asal_bb','pemasaran.lokal','pemasaran.regional','pemasaran.nasional','pemasaran.ekspor','industri.no_ijin','industri.tgl_ijin',
+                    'bahanbakar.jenis_bbm','bahanbakar.volume_bbm','satuan_bbm',
+                    'bahanbakar.jenis_listrik','bahanbakar.volume_listrik','bahanbakar.satuan_listrik','bahanbakar.jenis_gas','bahanbakar.volume_gas','bahanbakar.satuan_gas',
+                    'bahanbakar.jenis_air','bahanbakar.volume_air','bahanbakar.satuan_air',
                     'industri.status_pm','industri.klasifikasi'
                 ]);
         }
@@ -87,14 +99,18 @@ class IndustriExports implements FromCollection, WithHeadings, ShouldAutoSize
                 ->join('kelurahans','kelurahans.id','=','industri.kel_id')
                 ->join('tenagakerja','tenagakerja.id_industri','=','industri.id_industri')
                 ->join('bahanbaku','bahanbaku.id_industri','=','industri.id_industri')
+                ->join('bahanbakar','bahanbakar.id_industri','=','industri.id_industri')
                 ->join('pemasaran','pemasaran.id_industri','=','industri.id_industri')
                 ->where('industri.kec_id',$this->kecamatan)
                 ->get([
                     'badanusaha.nama_badan_usaha','industri.nama_perusahaan','industri.pemilik','industri.jalan',
                     'kelurahans.nama_kel','kecamatan.nama_kec','industri.telp_fax','tenagakerja.n_pr','tenagakerja.n_lk','tenagakerja.n_asing',
-                    'jenisproduksi.kbli','jenisproduksi.kode_cabang','jenisproduksi.nama_produk','jenisproduksi.kapasitas_produksi',
+                    'jenisproduksi.kbli','jenisproduksi.nama_produk','jenisproduksi.kapasitas_produksi',
                     'jenisproduksi.satuan','jenisproduksi.nilai_produksi','bahanbaku.jenis','bahanbaku.volume','bahanbaku.jenis','bahanbaku.volume',
                     'bahanbaku.satuan_bhn_bk','bahanbaku.nilai_bb_bp','bahanbaku.asal_bb','pemasaran.lokal','pemasaran.regional','pemasaran.nasional','pemasaran.ekspor','industri.no_ijin','industri.tgl_ijin',
+                    'bahanbakar.jenis_bbm','bahanbakar.volume_bbm','satuan_bbm',
+                    'bahanbakar.jenis_listrik','bahanbakar.volume_listrik','bahanbakar.satuan_listrik','bahanbakar.jenis_gas','bahanbakar.volume_gas','bahanbakar.satuan_gas',
+                    'bahanbakar.jenis_air','bahanbakar.volume_air','bahanbakar.satuan_air',
                     'industri.status_pm','industri.klasifikasi'
                 ]);
         }
@@ -105,15 +121,19 @@ class IndustriExports implements FromCollection, WithHeadings, ShouldAutoSize
                 ->join('kelurahans','kelurahans.id','=','industri.kel_id')
                 ->join('tenagakerja','tenagakerja.id_industri','=','industri.id_industri')
                 ->join('bahanbaku','bahanbaku.id_industri','=','industri.id_industri')
+                ->join('bahanbakar','bahanbakar.id_industri','=','industri.id_industri')
                 ->join('pemasaran','pemasaran.id_industri','=','industri.id_industri')
                 ->where('industri.kel_id',$this->kelurahan)
                 ->where('industri.kec_id',$this->kecamatan)
                 ->get([
                     'badanusaha.nama_badan_usaha','industri.nama_perusahaan','industri.pemilik','industri.jalan',
                     'kelurahans.nama_kel','kecamatan.nama_kec','industri.telp_fax','tenagakerja.n_pr','tenagakerja.n_lk','tenagakerja.n_asing',
-                    'jenisproduksi.kbli','jenisproduksi.kode_cabang','jenisproduksi.nama_produk','jenisproduksi.kapasitas_produksi',
+                    'jenisproduksi.kbli','jenisproduksi.nama_produk','jenisproduksi.kapasitas_produksi',
                     'jenisproduksi.satuan','jenisproduksi.nilai_produksi','bahanbaku.jenis','bahanbaku.volume','bahanbaku.jenis','bahanbaku.volume',
                     'bahanbaku.satuan_bhn_bk','bahanbaku.nilai_bb_bp','bahanbaku.asal_bb','pemasaran.lokal','pemasaran.regional','pemasaran.nasional','pemasaran.ekspor','industri.no_ijin','industri.tgl_ijin',
+                    'bahanbakar.jenis_bbm','bahanbakar.volume_bbm','satuan_bbm',
+                    'bahanbakar.jenis_listrik','bahanbakar.volume_listrik','bahanbakar.satuan_listrik','bahanbakar.jenis_gas','bahanbakar.volume_gas','bahanbakar.satuan_gas',
+                    'bahanbakar.jenis_air','bahanbakar.volume_air','bahanbakar.satuan_air',
                     'industri.status_pm','industri.klasifikasi'
                 ]);
         }
@@ -133,7 +153,6 @@ class IndustriExports implements FromCollection, WithHeadings, ShouldAutoSize
             'TENAGA KERJA Lk',
             'TENAGA KERJA As',
             'KBLI',
-            'KODE CABANG',
             'NAMA PRODUK',
             'KAPASITAS PRODUKSI',
             'SATUAN',
@@ -149,6 +168,18 @@ class IndustriExports implements FromCollection, WithHeadings, ShouldAutoSize
             'EXSKPORT',
             'NOMOR IJIN',
             'TANGGAL IJIN',
+            'JENIS BBM',
+            'VOLUME BBM',
+            'SATUAN BBM',
+            'JENIS LISTRIK',
+            'VOLUME LISTRIK',
+            'SATUAN LISTRIK',
+            'JENIS GAS',
+            'VOLUME GAS',
+            'SATUAN GAS',
+            'JENIS AIR',
+            'VOLUME AIR',
+            'SATUAN AIR',
             'STATUS PM',
             'KLASIFIKASI'
         ];

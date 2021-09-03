@@ -84,6 +84,7 @@
       <i>(Ketik tanpa titik / koma, tanda koma terisi otomatis setelah diketik)</i>
     </div>
     <button type="button" id="simpanThp2" class="btn btn-rounded btn-primary btn-block mt-5">Simpan</button>
+    <button type="button" id="loading2" class="btn btn-rounded btn-secondary hide btn-block mt-5">Menyimpan data....</button>
 </form>
 <script>
    var value_kec = "";

@@ -23,4 +23,5 @@
         <input type="text" readonly class="form-control" name="satuan_listrik" value="kwh" />
     </div>
     <button type="button" id="simpanThp8" class="btn btn-rounded btn-primary btn-block mt-5">Simpan</button>
+    <button type="button" id="loading8" class="btn btn-rounded btn-secondary hide btn-block mt-5">Menyimpan data....</button>
 </form>

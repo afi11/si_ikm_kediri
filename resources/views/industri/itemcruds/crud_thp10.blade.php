@@ -8,8 +8,8 @@
         <label class="col-form-label">Jenis</label>
         <select name="jenis_air" id="jenis_air" class="custom-select">
             <option value="">-- Pilih Salah Satu --</option>
-            <option value="air_tanah" @if($bhn_bkr->jenis_air == "air_tanah") selected @endif>Air Tanah</option>
-            <option value="air_pdam" @if($bhn_bkr->jenis_air == "air_pdam") selected @endif>Air PDAM</option>
+            <option value="Air Tanah" @if($bhn_bkr->jenis_air == "Air Tanah") selected @endif>Air Tanah</option>
+            <option value="Air PDAM" @if($bhn_bkr->jenis_air == "Air PDAM") selected @endif>Air PDAM</option>
         </select>
     </div>
     <div class="form-group">
@@ -23,4 +23,5 @@
         <input type="text" readonly class="form-control" name="satuan_air" value="m3 / meter kubik" />
     </div>
     <button type="button" id="simpanThp10" class="btn btn-rounded btn-primary btn-block mt-5">Simpan</button>
+    <button type="button" id="loading10" class="btn btn-rounded btn-secondary hide btn-block mt-5">Menyimpan data....</button>
 </form>

@@ -22,16 +22,6 @@
         <div class="card-body">
             <div class="row justify-content-center">
                 <div class="col-md-12">
-                    <div class="row justify-content-center">
-                        <div class="col-md-6">
-                            <div class="alert alert-success alert-dismissible fade hide show" id="notifikasi_edit_industri" role="alert">
-                                <p class="add_notifikasi_industri"></p>
-                                <button type="button" class="close" onclick="addHideAlert()">
-                                  <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
                     <div class="pills-regular">
                         <ul class="nav nav-pills mb-1" id="pills-tab" role="tablist">
                             <li class="nav-item">
